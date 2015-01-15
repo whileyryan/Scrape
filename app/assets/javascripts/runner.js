@@ -1,6 +1,6 @@
 window.setInterval(function(){
   getWebsites();
-}, 60000);
+}, 600000);
 
 function getWebsites(){
   $.ajax({
