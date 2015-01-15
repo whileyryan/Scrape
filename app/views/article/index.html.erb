@@ -1,0 +1,8 @@
+<form action='/getArticles' role='form'>
+  <input type='text' name='website' paleholder='website'>
+  <input type='submit' value='submit'>
+</form>
+
+<% @articles.each do |article| %>
+  <a href='<%=article.href %>'><%= article.title %> </a><br>
+<% end %>
