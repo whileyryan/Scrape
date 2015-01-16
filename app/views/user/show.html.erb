@@ -1,0 +1,54 @@
+<div class='row'>
+  <div class='col-md-3'>
+    <form action='/getAutoWebsites' method='post'>
+      <input type='submit' value='Run a Scrape'>
+    </form>
+    <div class='space-10'></div>
+    <div class='divider-2'></div>
+    <h4>Words currently searching for:</h4>
+    <div class='divider-2'></div>
+    <% @words.each do |word| %>
+      <p><%= word.word %></p>
+    <% end %>
+    
+    <div class='space-10'></div>
+    <div class='divider-2'></div>
+    <h4>Websites currently scraping:</h4>
+    <div class='divider-2'></div>
+    <% @websites.each do |website| %>
+      <a href='<%= website.href %>'><%= website.href %></a><br>
+    <% end %>
+    <div class='space-10'></div>
+
+    <div class='divider-2'></div>
+    <a href="/preferences/<%=current_user.id%>"><h4>Preferences</h4></a>
+    <div class='divider-2'></div>
+    
+  </div>
+  <div class='col-md-6'>
+    <%= render partial: 'articles' %>
+  </div>
+
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

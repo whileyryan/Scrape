@@ -7,6 +7,12 @@ function getWebsites(){
     url: '/getAutoWebsites',
     type: 'post'
   }).done(function(response){
-    console.log(done);
+    console.log('Success');
   }) 
 } 
+
+$(document).ready(function(){
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').focus()
+  });
+})
