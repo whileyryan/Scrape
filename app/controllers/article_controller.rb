@@ -9,7 +9,7 @@ class ArticleController < ApplicationController
   end
 
   def getAuto
-    Article.get_websites
+    Article.get_websites(current_user.id)
     redirect_to "/user/#{current_user.id}"
   end
 end

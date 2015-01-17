@@ -1,3 +1,15 @@
+<% if @websites.count == 0 %>
+  <div class='row'>
+    <div class=' col-md-offset-4'>
+      <%= render partial: 'follow' %>
+    </div>
+    <p>You are currently following any sports.  If you would like to get updates click the button above to get 
+    'packages' so that you get automatic updates for the sports you select!  By selecting sports packages, you
+    automatically get updates from ESPN for the given sport, as well as that league's website. You can always add more sports later through the preferences link at the lower left corner of the page.</p>
+    <div class='space-10'></div>
+    <div class='divider-2'></div>
+  </div>
+<% end %>
 <div class='row'>
   <div class='col-md-3'>
     <form action='/getAutoWebsites' method='post'>
@@ -15,8 +27,12 @@
     <div class='divider-2'></div>
     <h4>Websites currently scraping:</h4>
     <div class='divider-2'></div>
+    <% if @websites.count == 0 %>
+      <p>You are not currently scraping any websites.  You can add a full package by clicking the button at the top of the page.  Or click preferences below to add specific websites. 
+      </p>
+    <% end %>
     <% @websites.each do |website| %>
-      <a href='<%= website.href %>'><%= website.href %></a><br>
+      <a href='<%= website.href %>' target="_blank"><%= website.href %></a><br>
     <% end %>
     <div class='space-10'></div>
 
@@ -29,26 +45,5 @@
     <%= render partial: 'articles' %>
   </div>
 
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 </div>

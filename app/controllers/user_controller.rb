@@ -22,7 +22,8 @@ class UserController < ApplicationController
   end
 
   def preferences
-
+    @words = Word.where(user_id: [0, "#{current_user.id}"])
+    @websites = Website.where(user_id: [0, "#{current_user.id}"])
   end
 
   def packages
@@ -30,4 +31,5 @@ class UserController < ApplicationController
     User.storePackages(params['sport'], current_user.id)
     redirect_to "/user/#{current_user.id}"
   end
+
 end

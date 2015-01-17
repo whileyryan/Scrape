@@ -1,20 +1,37 @@
-<h5>Add a word</h5>
-<form action='/addWord' method='post' >
-  <input type='text' placeholder='Word' name='word'>
-  <input type='submit' value='Submit'>
-</form>
-<h5>Add a website to scrape</h5>
-<form action='/addWebsite' method='post' >
-  <input type='text' placeholder='Website URL' name='href'>
-  <input type='submit' value='Submit'>
-</form>
-
-<h5>Add packages (this means that we scrape ESPN and the national league website for the sport you select)</h5>
-<form action="/addPackages">
-  <input type="checkbox" name="sport[]" value="Football">Football<br>
-  <input type="checkbox" name="sport[]" value="Basketball">Basketball<br>
-  <input type="checkbox" name="sport[]" value="Baseball">Baseball<br>
-  <input type="checkbox" name="sport[]" value="Hockey">Hockey<br>
-  <input type="checkbox" name="sport[]" value="Soccer">Soccer<br>
-  <input type='submit' value='Submit'>
-</form>
+<div class='row'>
+  <div class='col-md-4'>
+    <h4>Words you are currently searching for:</h4>
+    <div class='divider-2'></div>
+    <% @words.each do |word| %>
+      <p><%= word.word %></p>
+    <% end %>
+    <h5>Add a word</h5>
+    <form action='/addWord' method='post' >
+      <input type='text' placeholder='Word' name='word'>
+      <input type='submit' value='Submit'>
+    </form>
+  </div>
+  <div class='col-md-4'>
+    <h4>Websites you are currently scraping:</h4>
+    <div class='divider-2'></div>
+    <% @websites.each do |website| %>
+      <a href='<%= website.href %>' target="_blank"><%= website.href %></a><br>
+    <% end %>      
+    <h5>Add a website to scrape</h5>
+    <form action='/addWebsite' method='post' >
+      <input type='text' placeholder='Website URL' name='href'>
+      <input type='submit' value='Submit'>
+    </form>
+  </div>
+  <div class='col-md-4'>
+    <h5>Add packages (this means that we scrape ESPN and the national league website for the sport you select)</h5>
+    <form action="/addPackages">
+      <input type="checkbox" name="sport[]" value="Football">Football<br>
+      <input type="checkbox" name="sport[]" value="Basketball">Basketball<br>
+      <input type="checkbox" name="sport[]" value="Baseball">Baseball<br>
+      <input type="checkbox" name="sport[]" value="Hockey">Hockey<br>
+      <input type="checkbox" name="sport[]" value="Soccer">Soccer<br>
+      <input type='submit' value='Submit'>
+    </form>
+  </div>
+</div>
