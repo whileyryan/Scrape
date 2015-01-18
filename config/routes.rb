@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   get 'article/index'
 
   get '/getArticles' => 'article#getArticles'
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
   get '/addPackages' => 'user#packages'
 
   get '/addPackages/:sport' => 'user#packages'
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

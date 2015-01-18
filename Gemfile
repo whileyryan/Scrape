@@ -29,6 +29,10 @@ gem 'arel', '6.0.0.beta2'
 
 gem 'devise'
 
+gem 'omniauth'
+
+gem 'omniauth-yahoo', '~> 0.0.5'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
