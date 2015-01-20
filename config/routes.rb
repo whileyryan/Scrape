@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   delete '/garbageCollection' => 'user#garbageCollection'
 
-  get '/users/auth/yahoo/callback' => 'user#oauth'
+  get '/users/auth/yahoo/:callback' => 'user#oauth'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
