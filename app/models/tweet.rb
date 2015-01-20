@@ -9,6 +9,9 @@ class Tweet < ActiveRecord::Base
       config.access_token        = ENV['TWITTER_ACCESS_TOKEN']
       config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']
     end
+    p '='*100
+    p ENV['TWITTER_CONSUMER_KEY']
+    p '='*100
     keyword_array = Word.where(:user_id => current_user)
     sources = Source.where(:user_id => current_user)
     sources.each do |source|
