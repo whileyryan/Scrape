@@ -1,8 +1,4 @@
 class UserController < ApplicationController
-  
-
-
-
 
   def show
     @words = Word.where(user_id: [0, "#{current_user.id}"])
@@ -17,8 +13,7 @@ class UserController < ApplicationController
   end
 
   def oauth
-    p '-'*100
-    p params
+    p request.env["omniauth.auth"]
     redirect_to "/user/#{current_user.id}"
   end
 
