@@ -47,6 +47,15 @@ class UserController < ApplicationController
     redirect_to "/user/#{current_user.id}"
   end
 
+  def garbageCollection
+    Article.where('created_at > ?', 5.days.ago).each do |model|
+      model.destroy
+    end
 
+    Tweet.where('created_at > ?', 5.days.ago).each do |model|
+      model.destroy
+    end
+    redirect_to "/user/#{current_user.id}"
+  end
  
 end

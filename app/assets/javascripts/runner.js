@@ -3,6 +3,10 @@ window.setInterval(function(){
   getTweets();
 }, 600000);
 
+window.setInterval(function(){
+  garbageCollection();
+}, 86400000);
+
 function getWebsites(){
   $.ajax({
     url: '/getAutoWebsites',
@@ -11,6 +15,15 @@ function getWebsites(){
     console.log('Success');
   }) 
 } 
+
+function garbageCollection(){
+  $.ajax({
+    url: '/garbageCollection',
+    type: 'delete'
+  }).done(function(response){
+    console.log('Success deleted old data')
+  })
+}
 
 function getWebsites(){
   $.ajax({

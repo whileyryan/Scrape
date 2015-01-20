@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   post '/addSource' => 'user#addSource'
 
+  delete '/garbageCollection' => 'user#garbageCollection'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
