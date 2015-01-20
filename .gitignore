@@ -8,5 +8,8 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
+.env
 /log/*.log
 /tmp
+# Ignore application configuration
+/config/application.yml

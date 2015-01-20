@@ -1,4 +1,4 @@
-<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:yahoo) %>
+
 
 
 <% if @websites.count == 0 %>
@@ -17,6 +17,10 @@
   <div class='col-md-3'>
     <form action='/getAutoWebsites' method='post'>
       <input type='submit' value='Run a Scrape'>
+    </form>
+    <div class='space-10'></div>
+    <form action='/getTweets' >
+      <input type='submit' value='Get Tweets'>
     </form>
     <div class='space-10'></div>
     <div class='divider-2'></div>
@@ -45,8 +49,12 @@
     
   </div>
   <div class='col-md-6'>
+    <h2>Articles</h2>
     <%= render partial: 'articles' %>
+    <h2>Tweets</h2>
+    <%= render partial: 'tweets' %>
   </div>
+
 
 
 </div>

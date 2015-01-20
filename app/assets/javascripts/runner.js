@@ -1,11 +1,21 @@
 window.setInterval(function(){
   getWebsites();
+  getTweets();
 }, 600000);
 
 function getWebsites(){
   $.ajax({
     url: '/getAutoWebsites',
     type: 'post'
+  }).done(function(response){
+    console.log('Success');
+  }) 
+} 
+
+function getWebsites(){
+  $.ajax({
+    url: '/getTweets',
+    type: 'get'
   }).done(function(response){
     console.log('Success');
   }) 

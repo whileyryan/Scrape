@@ -1,0 +1,6 @@
+<% if @tweets.count == 0 %>
+  <p>There are currently no Tweets the fit your search criteria.  You can add more words to scrape for, add more Twitter users to follow, or simply wait and something is bound to show up</p>
+<% end %>
+<% @tweets.each do |tweet| %>
+  <%= tweet.tweet %>
+<% end %>
