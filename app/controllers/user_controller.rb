@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-  require 'twitter'
+  
 
 
 
@@ -14,6 +14,12 @@ class UserController < ApplicationController
     @mls = Article.order(id: :desc).where(sport: 'Soccer')
     @other = Article.order(id: :desc).where(sport: 'Other')
     @tweets = Tweet.order(id: :desc)
+  end
+
+  def oauth
+    p '-'*100
+    p params
+    redirect_to "/user/#{current_user.id}"
   end
 
   def getTweets
