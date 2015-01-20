@@ -1,4 +1,4 @@
-class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def yahoo
     # You need to implement the method below in your model (e.g. app/models/user.rb)
     p request.env["omniauth.auth"]
