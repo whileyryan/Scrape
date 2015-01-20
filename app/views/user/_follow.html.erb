@@ -1,0 +1,28 @@
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Select sports to follow!
+</button>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <form action="/addPackages">
+          <input type="checkbox" name="sport[]" value="Football">Football<br>
+          <input type="checkbox" name="sport[]" value="Basketball">Basketball<br>
+          <input type="checkbox" name="sport[]" value="Baseball">Baseball<br>
+          <input type="checkbox" name="sport[]" value="Hockey">Hockey<br>
+          <input type="checkbox" name="sport[]" value="Soccer">Soccer<br>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary submit-shit" >Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div class='container'>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <div class='navbar'>
+    <% if user_signed_in? %>
+      <%= link_to "Log out", destroy_user_session_path,:method=> :delete %> | <a href='/user/<%=current_user.id%>'>Home</a>
+    <% end %>
+  </div>
+  <%= yield %>
+</div>
 </body>
 </html>

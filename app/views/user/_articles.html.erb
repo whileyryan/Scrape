@@ -1,0 +1,53 @@
+<% if @nfl.length > 0 %>
+<h4>NFL</h4>
+  <div class='divider-2'></div>
+  <% @nfl.each do |article| %>
+    <a href='<%= article.href %>'><%= article.title %></a><br>
+    <div class='divider'></div>
+  <% end %>
+<% end %>
+
+<% if @nba.length > 0 %>
+<h4>NBA</h4>
+  <div class='divider-2'></div>
+  <% @nba.each do |article| %>
+    <a href='<%= article.href %>' target="_blank"><%= article.title %></a>
+    <div class='divider'></div>
+  <% end %>
+<% end %>
+
+<% if @nhl.length > 0 %>
+<h4>NHL</h4>
+  <div class='divider-2'></div>
+  <% @nhl.each do |article| %>
+    <a href='<%= article.href %>' target="_blank"><%= article.title %></a><br>
+    <div class='divider'></div>
+  <% end %>
+<% end %>
+
+<% if @mls.length > 0 %>
+<h4>Soccer</h4>
+  <div class='divider-2'></div>
+  <% @mls.each do |article| %>
+    <a href='<%= article.href %>' target="_blank"><%= article.title %></a><br>
+    <div class='divider'></div>
+  <% end %>
+<% end %>
+
+<% if @mlb.length > 0 %>
+<h4>MLB</h4>
+  <div class='divider-2'></div>
+  <% @mlb.each do |article| %>
+    <a href='<%= article.href %>'><%= article.title %></a><br>
+    <div class='divider'></div>
+  <% end %>
+<% end %>
+
+<% if @other.length > 0 %>
+<h4>Other</h4>
+  <div class='divider-2'></div>
+  <% @other.each do |article| %>
+    <a href='<%= article.href %>'><%= article.title %></a><br>
+    <div class='divider'></div>
+  <% end %>
+<% end %>

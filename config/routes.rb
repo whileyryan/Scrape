@@ -1,9 +1,28 @@
 Rails.application.routes.draw do
+  
+  devise_for :users
+
   get 'article/index'
 
   get '/getArticles' => 'article#getArticles'
 
   post '/getAutoWebsites' => 'article#getAuto'
+
+  get 'user/:id' => 'user#show'
+
+  post '/addWebsite' => 'user#addWebsite'
+
+  post '/addWord' => 'user#addWord'
+
+  get '/preferences/:id' => 'user#preferences'
+
+  get '/addPackages' => 'user#packages'
+
+  get '/addPackages/:sport' => 'user#packages'
+
+  get '/getTweets' => 'user#getTweets'
+
+  post '/addSource' => 'user#addSource'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
