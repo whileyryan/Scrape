@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  validates :title, uniqueness: true
+  validates_uniqueness_of :user_id, :scope => :title
   require 'open-uri'
 
 
