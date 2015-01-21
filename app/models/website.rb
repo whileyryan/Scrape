@@ -1,4 +1,3 @@
 class Website < ActiveRecord::Base
-  validates :href, uniqueness: true
-  validates_uniqueness_of :href, :scope => :user_id
+  validates_uniqueness_of :user_id, :scope => :href
 end

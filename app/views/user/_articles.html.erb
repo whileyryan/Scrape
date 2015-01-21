@@ -51,3 +51,7 @@
     <div class='divider'></div>
   <% end %>
 <% end %>
+
+<% if ((@nfl.length == 0) && (@nba.length == 0) && (@nhl.length == 0) && (@mls.length == 0) && (@mlb.length == 0) && (@other.length == 0)) %>
+  <p>There are no articles to show at this time.  You should either add websites to scrape, or simply wait and articles will show up.</p>
+<% end %>

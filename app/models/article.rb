@@ -37,7 +37,7 @@ class Article < ActiveRecord::Base
               href = link['href']
             end
             sport = Article.findSport(href)
-            Article.create(:title => link.text, :href => href, :sport => sport)
+            Article.create(:title => link.text, :href => href, :sport => sport, :user_id => current_user)
           end
         end
       end

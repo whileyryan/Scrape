@@ -1,51 +1,62 @@
-
+<div class='row'>
+  <div class='col-md-offset-4'>
+    <h1>Sports Scrape</h1>
+  </div>
+</div>
+<div class='space-10'></div>
 <% if !user_signed_in? %>
-<table>
-  <tr>
-    <td>
-      <h2>Log In</h2>
-      <%= form_for(:user, :url =>session_path(:user)) do |f| %>
-        <div class="span12">
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true %>
-        </div>
-      </div>
-      <div class="span12">
-        <div class="field">
-          <%= f.label :password %>
-          <% if @validatable %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
-      </div>
-        <div class="actions">
-          <%= f.submit "Login", class: "btn bnt-large btn-primary" %>
-        </div>
-      <% end %>
-    </td>
-    <td>
-      <h2>Sign up</h2>
-      <%= form_for(:user, :url => registration_path(:user)) do |f| %>
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password %>
-          <% if @validatable %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
-
-          <div class="actions">
-            <%= f.submit "Sign up",  class: "btn bnt-large btn-primary" %>
+<div class='row'>
+  <table>
+    <tr>
+      <div class='col-md-3'>
+        <td>
+          <h2>Log In</h2>
+          <%= form_for(:user, :url =>session_path(:user)) do |f| %>
+            <div class="span12">
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true %>
+            </div>
           </div>
-      <% end %>
-    </td>
-  </tr>
-</table>
+          <div class="span12">
+            <div class="field">
+              <%= f.label :password %>
+              <% if @validatable %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off" %>
+            </div>
+          </div>
+            <div class="actions">
+              <%= f.submit "Login", class: "btn bnt-large btn-primary" %>
+            </div>
+          <% end %>
+        </td>
+      </div>
+        <td>
+        <div class='sign_up'>
+          <h2>Sign up</h2>
+          <%= form_for(:user, :url => registration_path(:user)) do |f| %>
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password %>
+              <% if @validatable %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off" %>
+            </div>
+
+              <div class="actions">
+                <%= f.submit "Sign up",  class: "btn bnt-large btn-primary" %>
+              </div>
+          <% end %>
+        </div>
+        </td>
+    </tr>
+  </table>
+</div>
 <% end %>

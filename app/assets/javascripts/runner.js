@@ -25,11 +25,12 @@ $(document).ready(function(){
   $('.submit-shit').click(function(){
     var body = ($('.modal-body'));
     var sport_array = []
-    for (var i = 0; i < 4; i++){
+    for (var i = 0; i <= 4; i++){
       if ((body[0]['children'][0][i]['checked']) == true ){
         sport_array.push(body[0]['children'][0][i]['defaultValue'])
       }
     }
+    console.log(sport_array);
     $.ajax({
       url: '/addPackages',
       type: 'get',

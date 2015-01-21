@@ -1,18 +1,14 @@
 class UserController < ApplicationController
-  require 'twitter'
-
-
-
 
   def show
     @words = Word.where(user_id: [0, "#{current_user.id}"])
-    @websites = Website.where(user_id: [0, "#{current_user.id}"])
-    @nba = Article.order(id: :desc).where(sport: 'NBA')
-    @nfl = Article.order(id: :desc).where(sport: 'NFL')
-    @nhl = Article.order(id: :desc).where(sport: 'NHL')
-    @mlb = Article.order(id: :desc).where(sport: 'MLB')
-    @mls = Article.order(id: :desc).where(sport: 'Soccer')
-    @other = Article.order(id: :desc).where(sport: 'Other')
+    @websites = Website.where(user_id: "#{current_user.id}")
+    @nba = Article.order(id: :desc).where(sport: 'NBA', user_id: "#{current_user.id}")
+    @nfl = Article.order(id: :desc).where(sport: 'NFL', user_id: "#{current_user.id}")
+    @nhl = Article.order(id: :desc).where(sport: 'NHL', user_id: "#{current_user.id}")
+    @mlb = Article.order(id: :desc).where(sport: 'MLB', user_id: "#{current_user.id}")
+    @mls = Article.order(id: :desc).where(sport: 'Soccer', user_id: "#{current_user.id}")
+    @other = Article.order(id: :desc).where(sport: 'Other', user_id: "#{current_user.id}")
     @tweets = Tweet.order(id: :desc)
   end
 
@@ -43,6 +39,8 @@ class UserController < ApplicationController
   end
 
   def packages
+    p '-'*100
+    p params
     User.storePackages(params['sport'], current_user.id)
     redirect_to "/user/#{current_user.id}"
   end

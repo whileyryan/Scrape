@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
         Source.create(:user_id => current_user, :handle => "Buster_ESPN")
         
       elsif pack == 'Hockey'
+        p 'shitfuckstack'
         Website.create(:user_id => current_user, :href => "http://espn.go.com/nhl")
         Website.create(:user_id => current_user, :href => "http://www.nhl.com/ice/newsindex") 
         Source.create(:user_id => current_user, :handle => "NHL")
